@@ -14,7 +14,7 @@ public class Main {
         int[] num2 = new int[100];
 
 
-        if (sc.nextLine() != null) {
+        if (sc.nextLine()!= null) {
             for (int i = 0; i < num[2]; i++) {
                 num2[i] = Integer.parseInt(sc.nextLine());
             }
@@ -34,24 +34,21 @@ public class Main {
             cad[num2[k]-1] = cad[num2[k]-1] + x;
 
         }
-        int maxIndex = 0;
-        int maxIndex2 = 0;
-        for (int h = 0;h<cad.length-1;h++){
-            if (cad[maxIndex]<cad[h+1]){
-                maxIndex = h + 1;
-            }
-            else if (cad[maxIndex]==cad[h+1]){
-                maxIndex2 = h + 1;
-            }
-        }
-        if (maxIndex2!=0){
-            System.out.println(maxIndex+1);
-            System.out.println(maxIndex2+1);
-        }
-        else {
-            System.out.println(maxIndex + 1);
-        }
+        int[] idx = new int[num[0]];
 
+        for (int h = 0;h<cad.length;h++){
+            for (int g = 0;g<cad.length;g++)
+            if (cad[h]<cad[g]){
+                idx[h]++;
+            }
+        }
+        for (int f = 0;f<cad.length;f++){
+//            System.out.println(cad[f]);
+//            System.out.println(idx[f]);
+            if (idx[f]==0){
+                System.out.println(f+1);
+            }
+        }
 
     }
 
